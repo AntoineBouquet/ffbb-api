@@ -1,12 +1,12 @@
 {
   "name": "ffbb-api",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "FFBB scraper",
-  "main": "ffbb",
+  "main": "index.js",
   "scripts": {
     "test": "standard ffbb"
   },
-  "author": "Luca De Feo",
+  "author": "Antoine Bouquet",
   "license": "ISC",
   "dependencies": {
     "assert": "^1.3.0",
@@ -17,5 +17,17 @@
   },
   "devDependencies": {
     "standard": "^5.3.1"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "ffbb",
+    "scraper",
+    "licence",
+    "player"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntoineBouquet/ffbb-api.git"
   }
 }

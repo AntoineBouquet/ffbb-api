@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Test FFBB Api",
+  "main": "test.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Antoine Bouquet",
+  "license": "ISC",
+  "dependencies": {
+    "ffbb-api": "../"
+  }
+}

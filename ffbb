@@ -106,7 +106,7 @@ function fetchLicenseCSRF (query, next) {
       next(new Error('Wrong URL: ' + URLS.search), res)
     } else {
       var json = JSON.parse(body);
-      htmlOutput = json.find((elem) => elem != null && elem.command == 'insert');
+      htmlOutput = json.find((elem) => elem != null && elem.command === 'insert');
 
       next(null, parseSearchResult(htmlOutput.data))
     }
@@ -117,7 +117,7 @@ function fetchLicenseCSRF (query, next) {
    Fetches and parses licenses. It calls `fetchSearchFormCSRF` to obtain a CSRF
    id.
  */
-function fetchLicense (query, next) {
+exports.fetchLicense = function(query, next) {
   fetchSearchFormCSRF(function (err, csrf) {
     if (err) {
       next(err, csrf)
