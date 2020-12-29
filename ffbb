@@ -20,7 +20,7 @@ var SCRAPER = {
     firstName: 'prenom',
     gender: 'sexe',
     birthDate: 'dtNais[date]',
-    licenceId: 'numLicence',
+    licenseId: 'numLicence',
     nationalId: 'id_license',
     association: 'lbOrg',
     csrf: 'form_build_id'
@@ -118,6 +118,10 @@ function fetchLicenseCSRF (query, next) {
    id.
  */
 exports.fetchLicense = function(query, next) {
+  fetchLicenseInternal(query, next);
+}
+
+function fetchLicenseInternal(query, next) {
   fetchSearchFormCSRF(function (err, csrf) {
     if (err) {
       next(err, csrf)
@@ -142,7 +146,8 @@ program
     // This is really quick and dirty: if passes command line options, plus a
     // lot of junk down to `fetchLicense`, then it prints the results as a
     // table.
-    fetchLicense(opts, function (err, licenses) {
+
+    fetchLicenseInternal(opts, function (err, licenses) {
       if (err) {
         console.log(err)
       } else {
@@ -151,7 +156,6 @@ program
         _.each(licenses, function (license) {
           return table.push(_.values(license))
         })
-        console.log(table.toString())
       }
     })
   })

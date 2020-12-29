@@ -1,10 +1,10 @@
 const ffbb = require('./ffbb');
 
-exports.fetchLicensee = function(firstName, lastName, licensee, gender = 'M', association, birthDate, nationalId) {
+exports.fetchLicensee = function(firstName, lastName, licenceId, gender = 'M', association, birthDate, nationalId) {
   var param = {
     firstName: firstName,
     lastName: lastName,
-    licensee: licensee,
+    licenseId: licenceId,
     gender: gender,
     birthDate: birthDate,
     nationalId: nationalId,
@@ -12,7 +12,7 @@ exports.fetchLicensee = function(firstName, lastName, licensee, gender = 'M', as
   };
 
   return new Promise((resolve, reject) => {
-    ffbb.fetchLicense(param, (licensee, err) => {
+    ffbb.fetchLicense(param, (err, licensee) => {
       if (err) {
         reject(err);
       } else {
