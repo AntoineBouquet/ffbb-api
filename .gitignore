@@ -5,3 +5,4 @@ test/node_modules
 *.iml
 package-lock.json
 test/package-lock.json
+.dir-locals.el
